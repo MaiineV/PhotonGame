@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class ConnectMenu : MonoBehaviourPunCallbacks
 {
-    [SerializeField] GameObject _mainMenu;
     [SerializeField] GameObject _firstMenu;
 
     private void Start()
@@ -38,7 +37,7 @@ public class ConnectMenu : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        SceneManager.LoadScene(1);
+        PhotonNetwork.LoadLevel(1);
     }
 
     public override void OnJoinRoomFailed(short returnCode, string message)
