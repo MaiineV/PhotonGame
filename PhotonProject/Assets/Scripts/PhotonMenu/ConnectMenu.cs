@@ -10,7 +10,7 @@ public class ConnectMenu : MonoBehaviourPunCallbacks
     [SerializeField] GameObject _mainMenu;
     [SerializeField] GameObject _firstMenu;
 
-    public void ConnectServer()
+    private void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
     }
@@ -18,7 +18,6 @@ public class ConnectMenu : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("Succesfully Connect");
-        _mainMenu.gameObject.SetActive(false);
         _firstMenu.gameObject.SetActive(true);
     }
 

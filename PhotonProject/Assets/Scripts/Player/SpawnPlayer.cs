@@ -3,19 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class SpawnPlayer : MonoBehaviourPun
+public class SpawnPlayer : MonoBehaviour
 {
-    [SerializeField] private GameObject _player;
-    [SerializeField] private PhotonView _pv;
+    public GameObject _player;
 
     void Start()
     {
-        _pv.RPC("InstantiateCharacter", RpcTarget.OthersBuffered);
-    }
-
-    [PunRPC]
-    void InstantiateCharacter()
-    {
-        Instantiate(_player, Vector3.zero + Vector3.up, Quaternion.identity);
+        //PhotonNetwork.Instantiate(_player.name, transform.position, Quaternion.identity);
     }
 }

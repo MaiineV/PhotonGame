@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Hierarchy
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 401, y: 221}
   m_MaxSize: {x: 8001, y: 4021}
   vertical: 0
-  controlID: 45
+  controlID: 112
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,10 +170,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 707, y: 492}
-  m_MaxSize: {x: 18002, y: 14042}
+  m_MinSize: {x: 708, y: 492}
+  m_MaxSize: {x: 18003, y: 14042}
   vertical: 0
-  controlID: 43
+  controlID: 110
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -195,10 +195,10 @@ MonoBehaviour:
     y: 0
     width: 1640
     height: 947
-  m_MinSize: {x: 432, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 433, y: 492}
+  m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 44
+  controlID: 111
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,10 +248,10 @@ MonoBehaviour:
     y: 670
     width: 1640
     height: 277
-  m_MinSize: {x: 432, y: 271}
-  m_MaxSize: {x: 14002, y: 10021}
+  m_MinSize: {x: 433, y: 271}
+  m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 87
+  controlID: 92
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -271,8 +271,8 @@ MonoBehaviour:
     y: 0
     width: 318
     height: 277
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -458,9 +458,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 126.71289, y: 11.408259, z: 42.655884}
+    m_Target: {x: 1230.1855, y: 1004.43555, z: -547.001}
     speed: 2
-    m_Value: {x: 126.71289, y: 11.408259, z: 42.655884}
+    m_Value: {x: 1230.1855, y: 1004.43555, z: -547.001}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -507,13 +507,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.007583762, y: 0.5383442, z: -0.0048464276, w: 0.84267163}
+    m_Target: {x: 0.049476974, y: 0.0104870675, z: -0.0005195304, w: 0.9987184}
     speed: 2
-    m_Value: {x: 0.0088478075, y: 0.5383388, z: -0.0056539536, w: 0.8426631}
+    m_Value: {x: 0.049477056, y: 0.010487085, z: -0.00051953126, w: 0.99872005}
   m_Size:
-    m_Target: 70.71112
+    m_Target: 644.9806
     speed: 2
-    m_Value: 70.71112
+    m_Value: 644.9806
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -652,9 +652,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 90ccfeffb8ccfeff94cefeff9ccefeffead1feff1ad5feff9ad8feff4cdbfeff74dbfeff36ddfeff3eddfefffcddfeff90e0fefface5feffd4e5feff8ce7feff90e7feffc2ebfeffeaebfeffa2edfeffa6edfeff4cf0feff6cf1feffe6fcfeff0afdfeff42fefeff98fffeffc0fffeff8201ffff8a01ffff0404ffff7a09ffff800dffffa80dffff660fffff6a0fffffc010ffffd619ffff581bfffff41dffffe875ffffe8bcffffe8beffffd0dcffffa0faffff
+      m_SelectedIDs: e469ffff
+      m_LastClickedID: -38428
+      m_ExpandedIDs: e469ffff2e84ffff1a86fffffc87ffff488bffffc88cffffeeadfffffcb8ffff8ebbffffb6bbffff76bdffff7abdffffdcc0ffff04c1ffffc4c2ffffc8c2ffff3cc6ffff64c6ffff24c8ffff28c8ffff9ccbffffc4cbffff88cdffff90cdffff9ecfffff4ed2ffff12d3ffff5cd8ffff68d9ffff3edaffff68daffff24dcffff2edcffffc0dfffff18e1ffff52e3ffff7ae3ffff36e5ffff3ee5ffff7cf3ffffd2f3ffffc6f6ffffacf9ffff06faffff6afbffff7c4d00008a5000006e5e000078600000ee600000ac620000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -716,36 +716,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/PhotonMenu
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 89
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/PhotonMenu
   m_LastFoldersGridSize: 89
   m_LastProjectPath: C:\Users\agust\Documents\GitHub\PhotonGame\PhotonProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: da4b0000
-    m_LastClickedID: 19418
-    m_ExpandedIDs: 00000000d84b000000ca9a3b
+    scrollPos: {x: 0, y: 120}
+    m_SelectedIDs: 5c420000
+    m_LastClickedID: 16988
+    m_ExpandedIDs: 00000000b8400000ce400000d4400000bc41000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Scripts
-      m_OriginalName: Scripts
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 28278
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 12}
     m_SearchString: 
@@ -759,7 +759,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 00000000b8400000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -867,7 +867,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -76552
+  m_LastSelectedObjectID: -38428
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
