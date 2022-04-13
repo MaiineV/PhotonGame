@@ -4,7 +4,8 @@ ScriptsOnlyBuild:
     - ConnectMenu
     - CreatePlayer
     - PlayerMovement
-    - SpawnPlayer
+    - RoomLobby
+    - VarDontDestroy
     PhotonUnityNetworking.Demos.dll:
     - Photon.Pun.Demo.Asteroids.Asteroid
     - Photon.Pun.Demo.Asteroids.Bullet
@@ -80,44 +81,22 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1454}
-    - Class: 114
-      Script: {instanceID: 1456}
-    - Class: 114
       Script: {instanceID: 1810}
     - Class: 114
-      Script: {instanceID: 2432}
+      Script: {instanceID: 2556}
     - Class: 114
-      Script: {instanceID: 2554}
+      Script: {instanceID: 2756}
     - Class: 114
-      Script: {instanceID: 2734}
+      Script: {instanceID: 2942}
     - Class: 114
-      Script: {instanceID: 2754}
+      Script: {instanceID: 2950}
     - Class: 114
-      Script: {instanceID: 2940}
-    - Class: 114
-      Script: {instanceID: 2948}
-    - Class: 114
-      Script: {instanceID: 3042}
-    - Class: 114
-      Script: {instanceID: 4666}
-    - Class: 114
-      Script: {instanceID: 16996}
+      Script: {instanceID: 3456}
     - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/MenuScene.unity:
     - Class: 1
@@ -177,41 +156,45 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2242}
     - Class: 114
-      Script: {instanceID: 2432}
+      Script: {instanceID: 2280}
     - Class: 114
-      Script: {instanceID: 2554}
+      Script: {instanceID: 2434}
     - Class: 114
-      Script: {instanceID: 2734}
+      Script: {instanceID: 2556}
     - Class: 114
-      Script: {instanceID: 2754}
+      Script: {instanceID: 2736}
     - Class: 114
-      Script: {instanceID: 2782}
+      Script: {instanceID: 2756}
     - Class: 114
-      Script: {instanceID: 2870}
+      Script: {instanceID: 2784}
     - Class: 114
-      Script: {instanceID: 2940}
+      Script: {instanceID: 2872}
     - Class: 114
-      Script: {instanceID: 2948}
+      Script: {instanceID: 2942}
     - Class: 114
       Script: {instanceID: 2950}
     - Class: 114
-      Script: {instanceID: 3042}
+      Script: {instanceID: 2952}
     - Class: 114
-      Script: {instanceID: 3498}
+      Script: {instanceID: 3044}
     - Class: 114
-      Script: {instanceID: 3812}
+      Script: {instanceID: 3502}
     - Class: 114
       Script: {instanceID: 3816}
     - Class: 114
-      Script: {instanceID: 3986}
+      Script: {instanceID: 3820}
     - Class: 114
-      Script: {instanceID: 4030}
+      Script: {instanceID: 3990}
     - Class: 114
-      Script: {instanceID: 4428}
+      Script: {instanceID: 4034}
     - Class: 114
-      Script: {instanceID: 4572}
+      Script: {instanceID: 4432}
     - Class: 114
-      Script: {instanceID: 4880}
+      Script: {instanceID: 4576}
+    - Class: 114
+      Script: {instanceID: 4882}
+    - Class: 114
+      Script: {instanceID: 18560}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -557,6 +540,12 @@ ScriptsOnlyBuild:
     className: Launcher
   - hash:
       serializedVersion: 2
+      Hash: 409196f80dcbbc0ef1b4449d279c54f0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RoomLobby
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Procedural
@@ -761,7 +750,7 @@ ScriptsOnlyBuild:
     className: SplinePosition
   - hash:
       serializedVersion: 2
-      Hash: 839ea7ff4d1decc568fb1d33081eb9ef
+      Hash: 9b83fbb2ac10d6673b7f7fed51b0661a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ConnectMenu
@@ -981,6 +970,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
     className: ServerProperty
+  - hash:
+      serializedVersion: 2
+      Hash: 0dcb9109cfa106c0b82ee7ceaea9794f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CreatePlayer
   - hash:
       serializedVersion: 2
       Hash: cba6cca6bb3290c4c00d709cf63843db
@@ -1451,12 +1446,6 @@ ScriptsOnlyBuild:
     className: PunTurnManager
   - hash:
       serializedVersion: 2
-      Hash: 95074457c11ea533b8247aab6901dcc6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SpawnPlayer
-  - hash:
-      serializedVersion: 2
       Hash: 11bdd61587db747672b66c52442395d8
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
@@ -1565,10 +1554,10 @@ ScriptsOnlyBuild:
     className: UserIdUiForm
   - hash:
       serializedVersion: 2
-      Hash: b31825cd469609c0aa01a74521ae8e28
+      Hash: 9c6b506cc6291601e7e6e63aed1086bf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: CreatePlayer
+    className: VarDontDestroy
   platform: 19
   scenePathNames:
   - Assets/Scenes/MenuScene.unity

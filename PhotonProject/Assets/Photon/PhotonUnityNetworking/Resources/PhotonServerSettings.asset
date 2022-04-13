@@ -42,6 +42,11 @@ MonoBehaviour:
   - InstantiateCharacter
   - Create2
   - ChangeList
+  - SetReady
+  - LoadScene
+  - ChangeListOff
+  - ChangeListOn
+  - InstanciateBullet
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

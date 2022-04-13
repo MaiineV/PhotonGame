@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class ConnectMenu : MonoBehaviourPunCallbacks
 {
     [SerializeField] GameObject _firstMenu;
+    [SerializeField] GameObject _roomMenu;
 
     private void Start()
     {
@@ -37,7 +36,8 @@ public class ConnectMenu : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel(1);
+        _firstMenu.gameObject.SetActive(false);
+        _roomMenu.gameObject.SetActive(true);
     }
 
     public override void OnJoinRoomFailed(short returnCode, string message)

@@ -6,36 +6,110 @@ using Photon.Pun;
 
 public class RoomLobby : MonoBehaviourPunCallbacks
 {
+    #region vars
     public PhotonView pv;
     public List<bool> playerIsReady;
-    public int id;
+    public List<bool> playerIDWasTook;
     public List<Text> names;
+    #endregion
 
-    public void BTN_Ready()
-    {
-        if (playerIsReady[id])
-        {
-            playerIsReady[id] = false;
-            names[id].color = Color.red;
-        }
-        else
-        {
-            playerIsReady[id] = true;
-            names[id].color = Color.green;
-        }
-    }
-
+    #region OnAction
     public override void OnJoinedRoom()
     {
-        id = PhotonNetwork.CurrentRoom.PlayerCount - 1;
-        pv.RPC("ChangeList", RpcTarget.All);
+        StartCoroutine(WaitBuffered());
+    }
+
+    public override void OnLeftRoom()
+    {
+        pv.RPC("ChangeListOff", RpcTarget.All, VarDontDestroy.instance.id);
+    }
+    #endregion
+
+    #region Buttons
+    public void BTN_Ready()
+    {
+        pv.RPC("SetReady", RpcTarget.AllBuffered, VarDontDestroy.instance.id);
+    }
+
+    public void BTN_Start()
+    {
+        if (Check())
+            pv.RPC("LoadScene", RpcTarget.All);
+    }
+    #endregion
+
+    #region Check
+    bool Check()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            for (int i = 0; i < playerIDWasTook.Count; i++)
+            {
+                if (playerIDWasTook[i] != playerIsReady[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+    #endregion
+
+    #region RPC
+    [PunRPC]
+    void LoadScene()
+    {
+        PhotonNetwork.LoadLevel("GameScene");
     }
 
     [PunRPC]
-    void ChangeList()
+    void SetReady(int myID)
     {
-        names[id].gameObject.SetActive(true);
-        playerIsReady.Capacity = PhotonNetwork.CurrentRoom.PlayerCount;
+        if (playerIsReady[myID])
+        {
+            playerIsReady[myID] = false;
+            names[myID].color = Color.red;
+        }
+        else
+        {
+            playerIsReady[myID] = true;
+            names[myID].color = Color.green;
+        }
     }
 
+    [PunRPC]
+    void ChangeListOn(int myID)
+    {
+        names[myID].gameObject.SetActive(true);
+        names[myID].text = myID.ToString();
+        playerIDWasTook[myID] = true;
+    }
+
+    [PunRPC]
+    void ChangeListOff(int myID)
+    {
+        names[myID].gameObject.SetActive(false);
+        playerIDWasTook[myID] = false;
+    }
+    #endregion
+
+    #region Corrutina
+    IEnumerator WaitBuffered()
+    {
+        yield return new WaitForSeconds(1f);
+
+        int countID = 0;
+        foreach (var item in playerIDWasTook)
+        {
+            if (!item)
+            {
+                VarDontDestroy.instance.id = countID;
+                break;
+            }
+            countID++;
+        }
+        pv.RPC("ChangeListOn", RpcTarget.AllBuffered, VarDontDestroy.instance.id);
+    }
+    #endregion
 }
