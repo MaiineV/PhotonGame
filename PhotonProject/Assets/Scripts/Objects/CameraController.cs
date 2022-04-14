@@ -5,19 +5,11 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     private GameObject _player;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        
-    }
+        if (_player == null)
+            _player = VarDontDestroy.instance.myPlayer;
 
-    public void FollowPlayer(GameObject p)
-    {
-        _player = p;
+        transform.position = _player.transform.position;
     }
 }

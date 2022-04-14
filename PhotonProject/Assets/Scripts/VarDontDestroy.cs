@@ -7,6 +7,7 @@ public class VarDontDestroy : MonoBehaviour
     public static VarDontDestroy instance;
     public int id;
     public string nickName;
+    public GameObject myPlayer;
 
     void Awake()
     {
@@ -16,6 +17,5 @@ public class VarDontDestroy : MonoBehaviour
             Destroy(gameObject);
         else
             instance = this;
-
     }
 }

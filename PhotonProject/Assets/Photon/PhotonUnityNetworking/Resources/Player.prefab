@@ -139,8 +139,9 @@ GameObject:
   - component: {fileID: 1139331877463488336}
   - component: {fileID: 3819591548123195709}
   - component: {fileID: 6235365786030527059}
-  - component: {fileID: 6525953149540705278}
   - component: {fileID: 663152090712233726}
+  - component: {fileID: 6525953149540705278}
+  - component: {fileID: 3394144291468463746}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -275,13 +276,29 @@ MonoBehaviour:
   m_RotationModel:
     SynchronizeEnabled: 1
     InterpolateOption: 1
-    InterpolateRotateTowardsSpeed: 180
+    InterpolateRotateTowardsSpeed: 360
     InterpolateLerpSpeed: 5
   m_ScaleModel:
     SynchronizeEnabled: 0
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!54 &663152090712233726
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8104857300330686845}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &6525953149540705278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,26 +316,22 @@ MonoBehaviour:
   _playerMat: {fileID: 2100000, guid: 9ff4dae4e405623469a235a4e590ba84, type: 2}
   _allyMat: {fileID: 2100000, guid: be8f4d97fcb79ba439894d27238546e0, type: 2}
   _speed: 5
-  _bullet: {fileID: 5923378967758419597, guid: 7779ef4d5c6dfe040864888922ad9d7d, type: 3}
-  _spawnBulletPoint: {fileID: 969381864439789500}
   _rayMask:
     serializedVersion: 2
     m_Bits: 64
   playerHeight: 1
-  cameraPivot: {fileID: 0}
---- !u!54 &663152090712233726
-Rigidbody:
+--- !u!114 &3394144291468463746
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8104857300330686845}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494e857dec1b8db4e90c25ea361ad2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pv: {fileID: 3819591548123195709}
+  _bullet: {fileID: 5923378967758419597, guid: 7779ef4d5c6dfe040864888922ad9d7d, type: 3}
+  _spawnPoint: {fileID: 969381864439789500}
