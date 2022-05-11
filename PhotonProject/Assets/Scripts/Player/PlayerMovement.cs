@@ -6,10 +6,7 @@ using Photon.Pun;
 public class PlayerMovement : MonoBehaviourPun
 {
     [SerializeField] private PhotonView _pv;
-    [SerializeField] private Renderer _renderer;
-
-    [SerializeField] private Material _playerMat;
-    [SerializeField] private Material _allyMat;
+    [SerializeField] private GameObject _target;
 
     [SerializeField] private float _speed;
 
@@ -21,12 +18,8 @@ public class PlayerMovement : MonoBehaviourPun
     {
         if (_pv.IsMine)
         {
-            _renderer.material = _playerMat;
+            _target.SetActive(true);
             VarDontDestroy.instance.myPlayer = this.gameObject;
-        }
-        else
-        {
-            _renderer.material = _allyMat;
         }
     }
 

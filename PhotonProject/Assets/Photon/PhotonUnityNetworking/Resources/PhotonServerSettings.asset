@@ -47,6 +47,18 @@ MonoBehaviour:
   - ChangeListOff
   - ChangeListOn
   - InstanciateBullet
+  - ChangeWepon
+  - RPCShot
+  - RPC_CallBullet
+  - RPC_CallMultyBullet
+  - RPC_SetAngle
+  - UpdateUI
+  - Death
+  - RPC_Lose
+  - RPC_Win
+  - RPC_Death
+  - UpdateBossUI
+  - AddBool
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

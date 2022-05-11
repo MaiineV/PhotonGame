@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Photon.Pun;
 
 public class ConnectMenu : MonoBehaviourPunCallbacks
 {
     [SerializeField] GameObject _firstMenu;
     [SerializeField] GameObject _roomMenu;
+    [SerializeField] InputField _nick;
+    [SerializeField] int maxCaracters = 10;
+    [SerializeField] int minCaracters = 3;
+
 
     private void Start()
     {
@@ -21,7 +26,40 @@ public class ConnectMenu : MonoBehaviourPunCallbacks
 
     public void JoinOrCreateRoom()
     {
-        PhotonNetwork.JoinRandomOrCreateRoom();
+        int ammountOfLetters = 0;
+        int amountOfCaracters = 0;
+
+        foreach (var item in _nick.text)
+        {
+            Debug.Log(item.ToString());
+            amountOfCaracters++;
+            if (item.ToString() != " ")
+            {
+                ammountOfLetters++;
+                Debug.Log("sume");
+            }
+            else
+            {
+                Debug.Log("no sume");
+                continue;
+            }
+        }
+
+        Debug.Log(amountOfCaracters);
+
+        if(ammountOfLetters > minCaracters && amountOfCaracters < maxCaracters)
+        {
+            VarDontDestroy.instance.nickName = _nick.text;
+            PhotonNetwork.JoinRandomOrCreateRoom();
+        }
+        else if(ammountOfLetters < minCaracters)
+        {
+            Debug.Log("muy corto");
+        }
+        else if(amountOfCaracters > maxCaracters)
+        {
+            Debug.Log("muy largo");
+        }
     }
 
     public override void OnCreatedRoom()

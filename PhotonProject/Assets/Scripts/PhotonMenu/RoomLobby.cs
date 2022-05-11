@@ -79,10 +79,13 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    void ChangeListOn(int myID)
+    void ChangeListOn(string nick ,int myID)
     {
         names[myID].gameObject.SetActive(true);
-        names[myID].text = myID.ToString();
+        if (nick != "")
+            names[myID].text = nick;
+        else
+            names[myID].text = "Player" + myID;
         playerIDWasTook[myID] = true;
     }
 
@@ -109,7 +112,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
             }
             countID++;
         }
-        pv.RPC("ChangeListOn", RpcTarget.AllBuffered, VarDontDestroy.instance.id);
+        pv.RPC("ChangeListOn", RpcTarget.AllBuffered, VarDontDestroy.instance.nickName, VarDontDestroy.instance.id);
     }
     #endregion
 }
