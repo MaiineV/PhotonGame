@@ -17,7 +17,7 @@ MonoBehaviour:
     AppIdFusion: 
     AppIdChat: 
     AppIdVoice: 
-    AppVersion: 1
+    AppVersion: 
     UseNameServer: 1
     FixedRegion: 
     Server: 
@@ -28,37 +28,33 @@ MonoBehaviour:
     AuthMode: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  DevRegion: sa
+  DevRegion: 
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
   StartInOfflineMode: 0
   RpcList:
+  - AddBool
+  - ChangeListOff
+  - ChangeListOn
+  - ChangeWepon
   - ClickRpc
+  - Death
   - DestroyRpc
   - DestroySpaceship
   - Fire
-  - RespawnSpaceship
-  - InstantiateCharacter
-  - Create2
-  - ChangeList
-  - SetReady
   - LoadScene
-  - ChangeListOff
-  - ChangeListOn
-  - InstanciateBullet
-  - ChangeWepon
-  - RPCShot
+  - RespawnSpaceship
   - RPC_CallBullet
   - RPC_CallMultyBullet
-  - RPC_SetAngle
-  - UpdateUI
-  - Death
-  - RPC_Lose
-  - RPC_Win
   - RPC_Death
+  - RPC_Lose
+  - RPC_SetAngle
+  - RPC_Win
+  - RPCShot
+  - SetReady
   - UpdateBossUI
-  - AddBool
+  - UpdateUI
   DisableAutoOpenWizard: 1
-  ShowSettings: 1
-  DevRegionSetOnce: 1
+  ShowSettings: 0
+  DevRegionSetOnce: 0
