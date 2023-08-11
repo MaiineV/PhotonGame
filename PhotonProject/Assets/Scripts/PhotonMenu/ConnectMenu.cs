@@ -9,6 +9,7 @@ public class ConnectMenu : MonoBehaviourPunCallbacks
     [SerializeField] GameObject _firstMenu;
     [SerializeField] GameObject _roomMenu;
     [SerializeField] InputField _nick;
+    [SerializeField] private Text _warningText;
     [SerializeField] int maxCaracters = 10;
     [SerializeField] int minCaracters = 3;
 
@@ -47,18 +48,20 @@ public class ConnectMenu : MonoBehaviourPunCallbacks
 
         Debug.Log(amountOfCaracters);
 
-        if(ammountOfLetters > minCaracters && amountOfCaracters < maxCaracters)
+        if(ammountOfLetters >= minCaracters && amountOfCaracters <= maxCaracters)
         {
             VarDontDestroy.instance.nickName = _nick.text;
             PhotonNetwork.JoinRandomOrCreateRoom();
         }
         else if(ammountOfLetters < minCaracters)
         {
-            Debug.Log("muy corto");
+            _warningText.gameObject.SetActive(true);
+            _warningText.text = "Nombre muy corto! Minimo de caracteres: " + minCaracters;
         }
         else if(amountOfCaracters > maxCaracters)
         {
-            Debug.Log("muy largo");
+            _warningText.gameObject.SetActive(true);
+            _warningText.text = "Nombre muy largo! Maximo de caracteres: " + maxCaracters;
         }
     }
 
