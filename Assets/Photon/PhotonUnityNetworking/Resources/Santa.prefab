@@ -1983,6 +1983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pv: {fileID: 8407201493963714901}
   _target: {fileID: 8843684902685437108}
+  _rb: {fileID: 0}
   _speed: 10
   _rayMask:
     serializedVersion: 2

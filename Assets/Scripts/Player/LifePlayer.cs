@@ -5,6 +5,7 @@ using Photon.Pun;
 
 public class LifePlayer : MonoBehaviourPun, IPlayerDmg
 {
+    
     public PhotonView pv;
     public UIController ui;
     public float maxLife;

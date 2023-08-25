@@ -24,6 +24,7 @@ public class ShootingBeheivor : MonoBehaviour
         allWeapons.Add(new Shotgun(dmg, shootSpeed, _spawnPoint, shotgunBullet));
         allWeapons.Add(new Rifle(dmg, shootSpeed, _spawnPoint));
         _actualWeapon = allWeapons[0];
+        EventManager.Trigger("ChangeWeapon", 0);
     }
 
 
@@ -46,10 +47,12 @@ public class ShootingBeheivor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            EventManager.Trigger("ChangeWeapon", 0);
             _pv.RPC("ChangeWepon", RpcTarget.All, 0);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            EventManager.Trigger("ChangeWeapon", 1);
             _pv.RPC("ChangeWepon", RpcTarget.All, 1);
         }
     }

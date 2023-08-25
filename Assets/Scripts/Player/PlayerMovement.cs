@@ -8,11 +8,10 @@ public class PlayerMovement : MonoBehaviourPun
     [SerializeField] private PhotonView _pv;
     [SerializeField] private GameObject _target;
 
-    [SerializeField] private Rigidbody _rb;
-
     [SerializeField] private float _speed;
 
     [SerializeField] private LayerMask _rayMask;
+    [SerializeField] private LayerMask _wallMask;
 
     [SerializeField] private float playerHeight;
 
@@ -29,7 +28,21 @@ public class PlayerMovement : MonoBehaviourPun
     {
         if (!_pv.IsMine) return;
 
-        _rb.velocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * _speed;
+        var h = Input.GetAxis("Horizontal");
+        var v = Input.GetAxis("Vertical");
+        
+
+        if (Physics.Raycast(transform.position, new Vector3(h, 0, 0), 1, _wallMask))
+        {
+            h = 0;
+        }
+        
+        if (Physics.Raycast(transform.position, new Vector3(0, 0, v), 1, _wallMask))
+        {
+            v = 0;
+        }
+        
+        transform.position += new Vector3(h, 0, v) * Time.deltaTime * _speed;
         Rotation();
     }
 
